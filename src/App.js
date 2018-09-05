@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import HeroTable from './components/HeroTable'
+import HeroApp from './components/HeroApp';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <HeroTable />
+      <div className="App mx-auto">
+        <HeroApp />
       </div>
     );
   }
