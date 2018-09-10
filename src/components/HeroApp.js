@@ -15,13 +15,19 @@ class HeroApp extends React.Component {
     ];
 
     this.state = { heroes: this.heroList };
+
+    this.handleHeroAdded = this.handleHeroAdded.bind(this);
+  }
+
+  handleHeroAdded(hero) {
+    this.setState({ heroes: [...this.state.heroes, hero] });
   }
 
   render() {
     return (
       <div>
         <Header />
-        <FormHero />
+        <FormHero onHeroAdded={this.handleHeroAdded} />
         <HeroTable heroes={this.state.heroes} />
       </div>
     );

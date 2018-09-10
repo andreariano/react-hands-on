@@ -2,10 +2,6 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 class HeroRow extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <tr>

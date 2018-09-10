@@ -2,17 +2,13 @@ import React from 'react';
 import HeroRow from './HeroRow';
 
 class HeroTable extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.heroes = this.props.heroes.map((hero) => (
-      <HeroRow hero={hero.hero} superpower={hero.superpower} />
-    ))
-  }
-
   render() {
+    const heroes = this.props.heroes.map((hero) => (
+      <HeroRow key={hero.hero} hero={hero.hero} superpower={hero.superpower} />
+    ))
+
     return (
-      <div class="mt-3">
+      <div className="mt-3">
         <table className="table table-striped">
           <thead className="thead-light">
             <tr>
@@ -21,7 +17,7 @@ class HeroTable extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.heroes}
+            {heroes}
           </tbody>
         </table>
       </div>

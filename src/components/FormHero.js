@@ -1,13 +1,21 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 class FormHero extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { hero: "" };
+    this.state = { hero: "", superpower: "" };
 
     this.handleHeroChange = this.handleHeroChange.bind(this);
     this.handleSuperPowerChange = this.handleSuperPowerChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    this.props.onHeroAdded(this.state);
+    this.setState({ hero: "", superpower: "" });
+    e.preventDefault();
   }
 
   handleHeroChange(e) {
@@ -44,12 +52,16 @@ class FormHero extends React.Component {
             />
           </div>
           <div className="float-right">
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
           </div>
         </form>
       </div>
     );
   }
+}
+
+FormHero.propTypes = {
+  onHeroAdded: PropTypes.func.isRequired
 }
 
 export default FormHero;
