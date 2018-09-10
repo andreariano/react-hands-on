@@ -1,11 +1,11 @@
-import React from 'react';
-import HeroRow from './HeroRow';
+import React from "react";
+import HeroRow from "./HeroRow";
 
 class HeroTable extends React.Component {
   render() {
-    const heroes = this.props.heroes.map((hero) => (
-      <HeroRow key={hero.hero} hero={hero.hero} superpower={hero.superpower} />
-    ))
+    const heroes = this.props.heroes.map(hero => (
+      <HeroRow key={hero.id} hero={hero.hero} superpower={hero.superpower} />
+    ));
 
     return (
       <div className="mt-3">
@@ -16,12 +16,10 @@ class HeroTable extends React.Component {
               <th>Super-Power</th>
             </tr>
           </thead>
-          <tbody>
-            {heroes}
-          </tbody>
+          <tbody>{heroes}</tbody>
         </table>
       </div>
-    )
+    );
   }
 }
 

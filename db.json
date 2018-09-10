@@ -1,0 +1,19 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "hero": "Flash",
+      "superpower": "Velocidade"
+    },
+    {
+      "id": 2,
+      "hero": "Deadpool",
+      "superpower": "Imortalidade"
+    },
+    {
+      "id": 3,
+      "hero": "Superman",
+      "superpower": "Invencibilidade"
+    }
+  ]
+}

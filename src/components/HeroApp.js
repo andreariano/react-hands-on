@@ -1,26 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import HeroTable from './HeroTable'
-import FormHero from './FormHero'
-import Header from './Header';
+import HeroTable from "./HeroTable";
+import FormHero from "./FormHero";
+import Header from "./Header";
+
+import HeroApi from "../lib/hero-api";
 
 class HeroApp extends React.Component {
   constructor(props) {
     super(props);
 
-    this.heroList = [
-      {hero: "Flash", superpower: "Velocidade"},
-      {hero: "Deadpool", superpower: "Imortalidade"},
-      {hero: "Superman", superpower: "Invencibilidade"}
-    ];
+    this.state = { heroes: [] };
 
-    this.state = { heroes: this.heroList };
+    HeroApi.getAll().then(heroes => {
+      this.setState({ heroes: heroes });
+    });
 
     this.handleHeroAdded = this.handleHeroAdded.bind(this);
   }
 
   handleHeroAdded(hero) {
     this.setState({ heroes: [...this.state.heroes, hero] });
+
+    HeroApi.addHero(hero);
   }
 
   render() {
