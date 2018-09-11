@@ -33,7 +33,7 @@ class HeroApp extends React.Component {
 
   handleDelClicked(heroId){
     this.setState({
-      heroes: this.state.heroes.filter((hero) => hero.id != heroId)
+      heroes: this.state.heroes.filter((hero) => hero.id !== heroId)
     });
 
     HeroApi.deleteHero(heroId);

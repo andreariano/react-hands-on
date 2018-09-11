@@ -18,7 +18,11 @@ class FormHero extends React.Component {
 
   handleSubmit(e) {
     this.props.onHeroAdded(this.state);
-    this.setState({ id: 0, hero: "", superpower: "" });
+    this.setState({ 
+      id: Math.floor(Math.random() * 100000), 
+      hero: "", 
+      superpower: "" 
+    });
     e.preventDefault();
   }
 
