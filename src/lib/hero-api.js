@@ -23,6 +23,13 @@ const HeroApi = {
       .catch(function(error) {
         console.log(error);
       });
+  },
+  deleteHero: heroId => {
+    return axios
+      .delete(`${Env.heroApiUrl}/heroes/${heroId}`)
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 };
 

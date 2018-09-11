@@ -5,7 +5,11 @@ class FormHero extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { hero: "", superpower: "" };
+    this.state = { 
+      id: Math.floor(Math.random() * 100000), 
+      hero: "", 
+      superpower: "" 
+    };
 
     this.handleHeroChange = this.handleHeroChange.bind(this);
     this.handleSuperPowerChange = this.handleSuperPowerChange.bind(this);
@@ -14,7 +18,7 @@ class FormHero extends React.Component {
 
   handleSubmit(e) {
     this.props.onHeroAdded(this.state);
-    this.setState({ hero: "", superpower: "" });
+    this.setState({ id: 0, hero: "", superpower: "" });
     e.preventDefault();
   }
 
