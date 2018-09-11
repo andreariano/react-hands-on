@@ -42,7 +42,7 @@ class HeroRow extends React.Component {
           <button 
             type="button" 
             className="btn btn-default btn-sm btn-outline-danger"
-            onClick={() => this.handleDel(this.props.hero.id)}
+            onClick={() => this.handleDel(this.props.id)}
           >del
           </button>
         </td>
