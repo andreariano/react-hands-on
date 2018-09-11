@@ -6,9 +6,9 @@ class FormHero extends React.Component {
     super(props);
 
     this.state = { 
-      id: Math.floor(Math.random() * 100000), 
-      hero: "", 
-      superpower: "" 
+      id: props.id, 
+      hero: props.hero, 
+      superpower: props.superpower 
     };
 
     this.handleHeroChange = this.handleHeroChange.bind(this);
@@ -17,12 +17,7 @@ class FormHero extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.onHeroAdded(this.state);
-    this.setState({ 
-      id: Math.floor(Math.random() * 100000), 
-      hero: "", 
-      superpower: "" 
-    });
+    this.props.onHeroAddedOrEdited(this.state);
     e.preventDefault();
   }
 
@@ -69,7 +64,7 @@ class FormHero extends React.Component {
 }
 
 FormHero.propTypes = {
-  onHeroAdded: PropTypes.func.isRequired
+  onHeroAddedOrEdited: PropTypes.func.isRequired
 }
 
 export default FormHero;

@@ -9,7 +9,7 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "json-server": "json-server db.json --watch",
+    "json-server": "json-server db.json --watch --port 3001",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

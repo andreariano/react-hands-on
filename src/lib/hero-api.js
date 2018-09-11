@@ -24,6 +24,17 @@ const HeroApi = {
         console.log(error);
       });
   },
+  updateHero: hero => {
+    return axios
+      .put(`${Env.heroApiUrl}/heroes/${hero.id}`, {
+        id: hero.id,
+        hero: hero.hero,
+        superpower: hero.superpower
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  },
   deleteHero: heroId => {
     return axios
       .delete(`${Env.heroApiUrl}/heroes/${heroId}`)

@@ -30,7 +30,11 @@ class HeroRow extends React.Component {
           <button 
             type="button" 
             className="btn btn-default btn-sm btn btn-outline-secondary"
-            onClick={() => this.handleEdit(this.props.id)}
+            onClick={() => this.handleEdit({
+              id: this.props.id,
+              hero: this.props.hero,
+              superpower: this.props.superpower
+            })}
           >edit
           </button>
         </td>
@@ -38,7 +42,7 @@ class HeroRow extends React.Component {
           <button 
             type="button" 
             className="btn btn-default btn-sm btn-outline-danger"
-            onClick={() => this.handleDel(this.props.id)}
+            onClick={() => this.handleDel(this.props.hero.id)}
           >del
           </button>
         </td>
@@ -48,6 +52,7 @@ class HeroRow extends React.Component {
 }
 
 HeroRow.propTypes = {
+  id: PropTypes.number.isRequired,
   hero: PropTypes.string.isRequired,
   superpower: PropTypes.string.isRequired,
   onEditClicked: PropTypes.func.isRequired,
